@@ -203,35 +203,70 @@ public class ArrayHelpers {
         return isValid;
     }
 
+    /**
+     * lastIndexOf() - when the last index of an element is not found
+     *
+     * @param source  The length of the array
+     * @param target  the expected value
+     * @return should return -1 when the element is not in the array.
+     *
+     * @author Ivan Radev
+     */
+
     public static int lastIndexOf(int[] source, int target) {
-        return 0;
+        // Check if the array is not empty
+        if (source.length != 0) {
+        // Iterate through the array from the end to the beginning
+            for (int i = source.length - 1; i >= 0; i--) {
+        // Check if the current element is equal to the target
+                if (source[i] == target) {
+        // Return the index of the last occurrence of the target
+                    return i;
+                }
+            }
+        }
+    // Return -1 if the target is not found or the array is empty
+        return -1;
     }
-
-    public static int[] removeAllOccurrences(int[] source, int element) {return new int[1];}
-
 
     /**
-     * Reverse the array: arrayToReverse
+     * removeAllOccurrences
      *
-     * @param arrayToReverse New array with the riversed elements
-     * @return void
+     * @param source  The length of the array
+     * @param element
+     * @return remove all currencies when an element exists
      *
-     * @author Kaloyan Enchev
+     * @author Ivan Radev
      */
-    public static void reverse(int[] arrayToReverse)
-    {
-        int[] arrHelper = new int[arrayToReverse.length];
 
-        for (int i = 0; i < arrayToReverse.length; i++)
-        {
-            arrHelper[i] = arrayToReverse[arrayToReverse.length - i - 1];
+    public static int[] removeAllOccurrences(int[] source, int element) {
+    // Count occurrences of the specified element in the array
+            int count = 0;
+            for (int i = 0; i < source.length; i++)
+            {
+                if (source[i] == element)
+                {
+                    count++;
+                }
+            }
+        // If no occurrences found, return the original array
+            if (count == 0)
+            {
+                return source;
+            }
+       // Create a new array with size adjusted for removed occurrences
+            int[] newArr = new int[source.length - count];
+       // Copy elements from the original array to the new array, excluding occurrences of the specified element
+            for (int i = 0, j = 0; i < source.length; i++)
+            {
+                if (source[i] != element)
+                {
+                    newArr[j++] = source[i];
+                }
+            }
+        // Return the new array without occurrences of the specified element
+            return newArr;
         }
-
-        for (int i = 0; i < arrayToReverse.length; i++)
-        {
-            arrayToReverse[i] = arrHelper[i];
-        }
-    }
 
     /**
      * Section: Тhe elements in the array from the startIndex to the endIndex remain

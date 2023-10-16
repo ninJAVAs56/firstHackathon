@@ -206,12 +206,40 @@ public class StringHelpers {
         return source;
     }
 
+    /**
+     * Java program to demonstrate the usage of
+     * // repeat() method
+     *
+     * @param source  String
+     * @param times - numbers of the times
+     * @return returns source repeated
+     *
+     * @author Ivan Radev
+     */
+
     public static String repeat(String source, int times) {
-        return null;
+        times = 4;
+
+        return source.repeat(times);
     }
 
+    /**
+     * Java program to demonstrate the usage of
+     * // reverse() method
+     *
+     * @param source  String
+     * @param -
+     * @return reverses the given string
+     *
+     * @author Ivan Radev
+     */
     public static String reverse(String source) {
-        return null;
+        String string = "";
+        for (int i = source.length() - 1; i >= 0; i--)
+        {
+            string += source.charAt(i);
+        }
+        return string;
     }
 
     /**
