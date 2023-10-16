@@ -54,6 +54,14 @@ public class StringHelpers {
         return false;
     }
 
+    /**
+     * Checks if the given string ends with the specified character.
+     *
+     * @param source The input string to be checked.
+     * @param target The character to check for at the end of the string.
+     * @return True if the string ends with the specified character; otherwise, false.
+     * @author Lyubima Malkocheva
+     */
     public static boolean endsWith(String source, char target) {
         if (source != null && !source.isEmpty()) {
             int index = source.length();
@@ -63,6 +71,14 @@ public class StringHelpers {
         return false;
     }
 
+    /**
+     * Finds the index of the first occurrence of the specified character in the given string.
+     *
+     * @param source The input string to search within.
+     * @param target The character to search for.
+     * @return The index of the first occurrence of the character in the string, or -1 if not found.
+     * @author Lyubima Malkocheva
+     */
     public static int firstIndexOf(String source, char target) {
         if (!source.isEmpty()) {
             for (int i = 0; i < source.length(); i++) {
