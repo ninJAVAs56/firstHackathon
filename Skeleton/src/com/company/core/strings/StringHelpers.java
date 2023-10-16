@@ -62,13 +62,60 @@ public class StringHelpers {
         return 0;
     }
 
+    /**
+     * Finds the index of the last occurrence of the specified character in the given string.
+     *
+     * This method searches for the last occurrence of the symbol character
+     * in the provided source string. If the character is found, the method
+     * returns its index; otherwise, it returns -1.
+     *
+     * @param source The string in which to search for the target character.
+     * @param symbol The character to be found within the string.
+     * @return The index of the last occurrence of the target character in the string, or -1 if the character is not found.
+     *
+     * @author Kalina Borissova
+     */
     public static int lastIndexOf(String source, char symbol) {
-        return 0;
+        int result = -1;
+        char[] chars = source.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if(chars[i] == symbol){
+                result = i;
+            }
+        }
+        return result;
     }
 
+    /**
+     * Pads the given string with a specified padding symbol to achieve the desired length.
+     *
+     * This method pads the provided source string with the given
+     * paddingSymbol on both sides until the resulting string reaches
+     * the specified length. If the total padding needed is an odd number,
+     * an additional padding symbol is added to the right side of the string.
+     *
+     * @param source The original string to be padded.
+     * @param length The desired length of the padded string.
+     * @param paddingSymbol The character used for padding.
+     * @return A string padded with the specified symbol on both sides to reach the desired length.
+     *
+     * @throws IllegalArgumentException If the specified length is less than the length of the source string.
+     *
+     * @author Kalina Borissova
+     */
     public static String pad(String source, int length, char paddingSymbol) {
-        return null;
-
+        String result = "";
+        int amm = length - source.length();
+        amm = amm / 2;
+        for (int i = 0; i < amm; i++) {
+            result += paddingSymbol;
+        }
+        System.out.println(result);
+        result += source;
+        for (int i = 0; i < amm; i++) {
+            result += paddingSymbol;
+        }
+        return result;
     }
 
     public static String padEnd(String source, int length, char paddingSymbol) {

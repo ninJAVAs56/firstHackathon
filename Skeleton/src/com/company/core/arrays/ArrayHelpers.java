@@ -60,12 +60,44 @@ public class ArrayHelpers {
 
     }
 
+    /**
+     * Fills the given integer array with the specified element.
+     *
+     * This method assigns the specified elementto every index in the
+     * provided sourcearray, effectively filling the array with the
+     * given element.
+     *
+     * @param source The integer array to be filled.
+     * @param element The value to be assigned to all elements in the array.
+     *
+     * @author Kalina Borissova
+     */
     public static void fill(int[] source, int element) {
-
+        for(int i =0; i < source.length; i++){
+            source[i] = element;
+        }
     }
 
+    /**
+     * Finds the index of the first occurrence of the specified target element in the given integer array.
+     *
+     * This method iterates through the provided source array and returns
+     * the index of the first occurrence of the target element. If the
+     * target element is not found in the array, the method returns -1.
+     *
+     * @param source The integer array in which to search for the target element.
+     * @param target The value to be found within the array.
+     * @return The index of the first occurrence of the target element in the array, or -1 if the element is not found.
+     *
+     * @author Kalina Borissova
+     */
     public static int firstIndexOf(int[] source, int target) {
-        return 0;
+        for (int i = 0; i < source.length; i++) {
+            if(source[i] == target){
+                return i;
+            }
+        }
+        return -1;
     }
 
     public static int[] insert(int[] source, int index, int element) {
