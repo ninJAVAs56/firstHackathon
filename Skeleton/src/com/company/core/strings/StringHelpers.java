@@ -55,11 +55,23 @@ public class StringHelpers {
     }
 
     public static boolean endsWith(String source, char target) {
+        if (source != null && !source.isEmpty()) {
+            int index = source.length();
+            char search = source.charAt(index - 1);
+            return search == target;
+        }
         return false;
     }
 
     public static int firstIndexOf(String source, char target) {
-        return 0;
+        if (!source.isEmpty()) {
+            for (int i = 0; i < source.length(); i++) {
+                if (source.charAt(i) == target) {
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
 
     /**

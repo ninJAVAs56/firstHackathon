@@ -51,13 +51,38 @@ public class ArrayHelpers {
         return false;
     }
 
+    /**
+     * Copies elements from the sourceArray to the destinationArray.
+     *
+     * @param sourceArray      The array from which elements will be copied.
+     * @param destinationArray The array to which elements will be copied.
+     * @param count            The number of elements to copy.
+     */
     public static void copy(int[] sourceArray, int[] destinationArray, int count) {
-
+        if(sourceArray.length < count){
+            count = sourceArray.length;
+        }
+        for (int i = 0; i < count; i++) {
+            destinationArray[i] = sourceArray[i];
+        }
     }
 
+    /**
+     * Copies elements from the sourceArray, starting from a specified index, to the destinationArray, starting from a specified index.
+     *
+     * @param sourceArray       The array from which elements will be copied.
+     * @param sourceStartIndex  The index in the sourceArray from which copying begins.
+     * @param destinationArray  The array to which elements will be copied.
+     * @param destStartIndex    The index in the destinationArray where elements will be copied to.
+     * @param count             The number of elements to copy.
+     */
     public static void copyFrom(int[] sourceArray, int sourceStartIndex,
                                 int[] destinationArray, int destStartIndex, int count) {
 
+        for (int i = sourceStartIndex; i < count ; i++) {
+            destinationArray[destStartIndex] = sourceArray[i];
+            destStartIndex++;
+        }
     }
 
     /**
