@@ -268,6 +268,29 @@ public class ArrayHelpers {
             return newArr;
         }
 
+/**
+ * Reverse the array: arrayToReverse
+ *
+ * @param arrayToReverse New array with the riversed elements
+ * @return void
+ *
+ * @author Kaloyan Enchev
+ */
+public static void reverse(int[] arrayToReverse)
+{
+    int[] arrHelper = new int[arrayToReverse.length];
+
+    for (int i = 0; i < arrayToReverse.length; i++)
+    {
+        arrHelper[i] = arrayToReverse[arrayToReverse.length - i - 1];
+    }
+
+    for (int i = 0; i < arrayToReverse.length; i++)
+    {
+        arrayToReverse[i] = arrHelper[i];
+    }
+}
+    
     /**
      * Section: Тhe elements in the array from the startIndex to the endIndex remain
      *
