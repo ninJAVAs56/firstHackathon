@@ -46,9 +46,27 @@ public class StringHelpers {
         return result;
     }
 
+    /**
+     * Concatenating the two given strings in one together.
+     *
+     * @param string1
+     * @param string2
+     * @return Both strings concatenated together.
+     *
+     * @author Georgi Iliev
+     */
     public static String concat(String string1, String string2) {
         return string1 + string2;
     }
+    /**
+     * Showing is the given char symbol is contained in the given string
+     *
+     * @param String source
+     * @param char symbol
+     * @return Boolean that is true if the char is contained and false if it's not.
+     *
+     * @author Georgi Iliev
+     */
 
     public static boolean contains(String source, char symbol) {
         boolean contains = false;
