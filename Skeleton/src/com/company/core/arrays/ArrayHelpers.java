@@ -26,9 +26,23 @@ public class ArrayHelpers {
         return array;
     }
 
-    public static int[] addFirst(int[] source, int element)
-    {
-        return new int[1];
+    /**
+     * Appends an element to an int[] array.
+     *
+     * @param source The right part of the new array
+     * @param element The left part of the new array
+     * @return An int[] expected that consists of the newly added int element followed by the given source array.
+     *
+     * @author Georgi Iliev
+     */
+    public static int[] addFirst(int[] source, int element) {
+
+        int[]expected = new int[source.length+1];
+        expected[0] = element;
+        for (int i = 1; i < expected.length ; i++) {
+            expected[i] = source[i-1];
+        }
+        return expected;
     }
     /**
      * Appends an array of elements to an int[] array.
@@ -51,8 +65,24 @@ public class ArrayHelpers {
         return array;
 }
 
+    /**
+     * Show is the given source array contains the given int element.
+     *
+     * @param source The given array.
+     * @param element The int element that should be checked is it contained.
+     * @return Boolean that shows is the statement true or false .
+     *
+     * @author Georgi Iliev
+     */
     public static boolean contains(int[] source, int element) {
-        return false;
+        boolean contains = false;
+        for (int i = 0; i < source.length; i++) {
+            if (source[i] == element){
+                contains = true;
+                break;
+            }
+        }
+        return contains;
     }
 
     /**

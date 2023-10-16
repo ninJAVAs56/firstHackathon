@@ -47,11 +47,15 @@ public class StringHelpers {
     }
 
     public static String concat(String string1, String string2) {
-        return null;
+        return string1 + string2;
     }
 
     public static boolean contains(String source, char symbol) {
-        return false;
+        boolean contains = false;
+        if (source.contains(""+symbol)){
+            contains = true;
+        }
+        return contains;
     }
 
     /**
