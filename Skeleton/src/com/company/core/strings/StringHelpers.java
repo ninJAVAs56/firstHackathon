@@ -131,14 +131,60 @@ public class StringHelpers {
     }
 
     public static String padEnd(String source, int length, char paddingSymbol) {
-        return null;
+        int sourceLength = source.length();
+        int lengthLeft = length-sourceLength;
+        if(sourceLength>length){
+            return source;
+        }
+        else if(length==0){
+            return source;
+        }
+        else {
+            for(int i = 0;i<lengthLeft;i++){
+                source += paddingSymbol;
+            }
+        }
+        return source;
     }
-
+    /**
+     * Returns a padded <code>string1</code> with added symbol/s at the beginning when a given length is not 0>.
+     *
+     * @param source The string which has to be padded
+     * @param length The expected length of the new string
+     * @param paddingSymbol The symbol to be added to the string
+     * @return A string after padding if any is done.
+     *
+     * @author Aleksandar Mechkarov
+     */
     public static String padStart(String source, int length, char paddingSymbol) {
-        return null;
-
+        int sourceLength = source.length();
+        int lengthLeft = length-sourceLength;
+        String addSymbol = "";
+        if(sourceLength>length){
+            return source;
+        }
+        else if(length==0){
+            return source;
+        }
+        else {
+            for(int i = 0;i<lengthLeft;i++){
+                addSymbol+=paddingSymbol;
+            }
+            addSymbol+=source;
+            source = addSymbol;
+        }
+        return source;
     }
-
+    /**
+     * Returns a padded <code>string1</code> with added symbol/s at the end when a given length is not 0>.
+     *
+     * @param source The string which has to be padded
+     * @param source The expected length of the new string
+     * @param times The symbol to be added to the string
+     * @return A string after padding if any is done.
+     *
+     * @author Aleksandar Mechkarov
+     */
     public static String repeat(String source, int times) {
         return null;
     }

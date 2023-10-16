@@ -1,5 +1,9 @@
 package com.company.core.arrays;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @SuppressWarnings({"ManualArrayCopy", "ExplicitArrayFilling"})
 public class ArrayHelpers {
 
@@ -125,12 +129,44 @@ public class ArrayHelpers {
         return -1;
     }
 
-    public static int[] insert(int[] source, int index, int element) {
-        return new int[1];
-    }
+    /**
+     * Returns an <code>array</code> with updated value at a given index>.
+     *
+     * @param source The array which indexes will be updated.
+     * @param index The index to be updated in the array.
+     * @param element The index of the element which has to be added to the array.
+     * @return A modified array.
+     *
+     * @author Aleksandar Mechkarov
+     */
 
+    public static int[] insert(int[] source, int index, int element) {
+        List<Integer> arrList = new ArrayList<>();
+        for (int i = 0; i < source.length; i++) {
+            arrList.add(source[i]);
+        }
+        arrList.add(index,element);
+        int[]newArr = new int[arrList.size()];
+        for (int i = 0; i < newArr.length; i++) {
+            newArr[i] = arrList.get(i);
+        }
+        return newArr;
+    }
+    /**
+     * Returns a  <code>boolean</code> with true when an index is present in the array and false when it is not>.
+     *
+     * @param source The array which indexes will be checked.
+     * @param index The index to be checked if present in the array.
+     * @return A boolean value.
+     *
+     * @author Aleksandar Mechkarov
+     */
     public static boolean isValidIndex(int[] source, int index) {
-        return false;
+        boolean isValid = true;
+        if(index>source.length-1||source.length==0){
+            isValid=false;
+        }
+        return isValid;
     }
 
     public static int lastIndexOf(int[] source, int target) {
