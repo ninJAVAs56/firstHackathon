@@ -88,12 +88,43 @@ public class StringHelpers {
         return null;
     }
 
-    public static String section(String source, int start, int end) {
-        return null;
+    /**
+     * Section: Тhe elements in the string from the start to the end remain
+     *
+     * @param source New string with the new elements from the <code>startIndex</code> position to
+    <code>endIndex</code> position
+     * @return string that starts with the character on start position to the character
+     on end position.
+     *
+     * @author Kaloyan Enchev
+     */
+    public static String section(String source, int start, int end)
+    {
+        String string = "";
+        for (int i = start, j = 0; i < end + 1; i++, j++)
+        {
+            string += source.charAt(i);
+        }
+
+        return string;
     }
 
-    public static boolean startsWith(String source, char target) {
-        return false;
+    /**
+     * Checks if the first char of the string is same as the <code>target</code>
+     *
+     * @return true if the first char of source is same as the target one. Return false when
+     the first char of the string is not same as the target one or when source is empty
+     *
+     * @author Kaloyan Enchev
+     */
+    public static boolean startsWith(String source, char target)
+    {
+        if (source.length() == 0 || source.charAt(0) != target)
+        {
+            return false;
+        }
+
+        return true;
     }
 
 }

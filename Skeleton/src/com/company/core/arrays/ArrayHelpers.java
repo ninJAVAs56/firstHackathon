@@ -80,15 +80,69 @@ public class ArrayHelpers {
         return 0;
     }
 
-    public static int[] removeAllOccurrences(int[] source, int element) {
-        return new int[1];
+    public static int[] removeAllOccurrences(int[] source, int element) {return new int[1];}
+
+
+    /**
+     * Reverse the array: arrayToReverse
+     *
+     * @param arrayToReverse New array with the riversed elements
+     * @return void
+     *
+     * @author Kaloyan Enchev
+     */
+    public static void reverse(int[] arrayToReverse)
+    {
+        int[] arrHelper = new int[arrayToReverse.length];
+
+        for (int i = 0; i < arrayToReverse.length; i++)
+        {
+            arrHelper[i] = arrayToReverse[arrayToReverse.length - i - 1];
+        }
+
+        for (int i = 0; i < arrayToReverse.length; i++)
+        {
+            arrayToReverse[i] = arrHelper[i];
+        }
     }
 
-    public static void reverse(int[] arrayToReverse) {
-    }
+    /**
+     * Section: Тhe elements in the array from the startIndex to the endIndex remain
+     *
+     * @param  source New array with the new elements from the startIndex position to
+     <code>endIndex</code> position
+     * @return An array that starts with the number on startIndex position to the number
+     on endIndexcode position. If the passed array is empty or the start index
+     is not valid it returns an empty array. Returns all remaining when given longer endIndex
+     *
+     * @author Kaloyan Enchev
+     */
+    public static int[] section(int[] source, int startIndex, int endIndex)
+    {
+        if (startIndex >= source.length || source.length == 0)
+        {
+            return source;
+        }
 
-    public static int[] section(int[] source, int startIndex, int endIndex) {
-        return new int[1];
+        if (endIndex > source.length)
+        {
+            int[] arr = new int[source.length - startIndex];
+
+            for (int i = startIndex, j = 0; i < source.length; i++, j++)
+            {
+                arr[j] = source[i];
+            }
+            return arr;
+        }
+
+        int[] arr = new int[(endIndex - startIndex) + 1];
+
+        for (int i = startIndex, j = 0; i < endIndex + 1; i++, j++)
+        {
+            arr[j] = source[i];
+        }
+
+        return arr;
     }
 
 }
