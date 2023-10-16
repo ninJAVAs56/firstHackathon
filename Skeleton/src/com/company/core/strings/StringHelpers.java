@@ -134,7 +134,7 @@ public class StringHelpers {
      * Returns a padded <code>string1</code> with added symbol/s at the end when a given length is not 0>.
      *
      * @param source The string which has to be padded
-     * @param source The expected length of the new string
+     * @param length The expected length of the new string
      * @param paddingSymbol The symbol to be added to the string
      * @return A string after padding if any is done.
      *
