@@ -130,6 +130,16 @@ public class StringHelpers {
         return result;
     }
 
+    /**
+     * Returns a padded <code>string1</code> with added symbol/s at the end when a given length is not 0>.
+     *
+     * @param source The string which has to be padded
+     * @param source The expected length of the new string
+     * @param paddingSymbol The symbol to be added to the string
+     * @return A string after padding if any is done.
+     *
+     * @author Aleksandar Mechkarov
+     */
     public static String padEnd(String source, int length, char paddingSymbol) {
         int sourceLength = source.length();
         int lengthLeft = length-sourceLength;
@@ -175,16 +185,7 @@ public class StringHelpers {
         }
         return source;
     }
-    /**
-     * Returns a padded <code>string1</code> with added symbol/s at the end when a given length is not 0>.
-     *
-     * @param source The string which has to be padded
-     * @param source The expected length of the new string
-     * @param times The symbol to be added to the string
-     * @return A string after padding if any is done.
-     *
-     * @author Aleksandar Mechkarov
-     */
+
     public static String repeat(String source, int times) {
         return null;
     }
