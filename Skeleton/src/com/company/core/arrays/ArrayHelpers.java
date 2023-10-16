@@ -61,6 +61,8 @@ public class ArrayHelpers {
      * @param sourceArray      The array from which elements will be copied.
      * @param destinationArray The array to which elements will be copied.
      * @param count            The number of elements to copy.
+     *
+     * @author Lyubima Malkocheva
      */
     public static void copy(int[] sourceArray, int[] destinationArray, int count) {
         if(sourceArray.length < count){
@@ -79,6 +81,8 @@ public class ArrayHelpers {
      * @param destinationArray  The array to which elements will be copied.
      * @param destStartIndex    The index in the destinationArray where elements will be copied to.
      * @param count             The number of elements to copy.
+     *
+     * @author Lyubima Malkocheva
      */
     public static void copyFrom(int[] sourceArray, int sourceStartIndex,
                                 int[] destinationArray, int destStartIndex, int count) {
